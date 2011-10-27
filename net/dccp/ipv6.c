@@ -271,7 +271,7 @@ static int dccp_v6_send_response(struct sock *sk, struct request_sock *req,
 							 &ireq6->loc_addr,
 							 &ireq6->rmt_addr);
 		ipv6_addr_copy(&fl6.daddr, &ireq6->rmt_addr);
-		err = ip6_xmit(sk, skb, &fl6, opt);
+		err = ip6_xmit(sk, skb, &fl6, opt, np->tclass);
 		err = net_xmit_eval(err);
 	}
 

@@ -218,7 +218,7 @@ static int sctp_v6_xmit(struct sk_buff *skb, struct sctp_transport *transport)
 
 	SCTP_INC_STATS(SCTP_MIB_OUTSCTPPACKS);
 
-	return ip6_xmit(sk, skb, fl6, np->opt);
+	return ip6_xmit(sk, skb, fl6, np->opt, np->tclass);
 }
 
 /* Returns the dst cache entry for the given source and destination ip

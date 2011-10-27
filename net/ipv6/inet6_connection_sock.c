@@ -248,7 +248,7 @@ int inet6_csk_xmit(struct sk_buff *skb, struct flowi *fl_unused)
 	/* Restore final destination back after routing done */
 	ipv6_addr_copy(&fl6.daddr, &np->daddr);
 
-	return ip6_xmit(sk, skb, &fl6, np->opt);
+	return ip6_xmit(sk, skb, &fl6, np->opt, np->tclass);
 }
 
 EXPORT_SYMBOL_GPL(inet6_csk_xmit);
