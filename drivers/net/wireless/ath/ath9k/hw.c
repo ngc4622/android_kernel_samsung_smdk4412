@@ -278,6 +278,9 @@ static bool ath9k_hw_read_revisions(struct ath_hw *ah)
 		val = REG_READ(ah, AR_SREV);
 		ah->hw_version.macRev = MS(val, AR_SREV_REVISION2);
 		return true;
+	case AR9300_DEVID_QCA955X:
+		ah->hw_version.macVersion = AR_SREV_VERSION_9550;
+		return true;
 	}
 
 	srev = REG_READ(ah, AR_SREV);
